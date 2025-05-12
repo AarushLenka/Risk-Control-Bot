@@ -1,6 +1,6 @@
-#define BLYNK_TEMPLATE_ID "TMPL3VD1qQ8gh"
-#define BLYNK_TEMPLATE_NAME "riskmonitor"
-#define BLYNK_AUTH_TOKEN "d3y2KulVL1Yw-16y7d665-FrvFP8YQmb"
+#define BLYNK_TEMPLATE_ID ""
+#define BLYNK_TEMPLATE_NAME ""
+#define BLYNK_AUTH_TOKEN ""
 
 #include <ESP8266WiFi.h>
 #include <BlynkSimpleEsp8266.h>
@@ -11,9 +11,9 @@
 
 DHT dht(DHTPIN, DHTTYPE);
 
-char auth[] = "d3y2KulVL1Yw-16y7d665-FrvFP8YQmb";
-char ssid[] = "Galaxy A52s 5GF184";
-char pass[] = "Recharge karwalo";
+char auth[] = "";
+char ssid[] = "";
+char pass[] = "";
 
 const int motorPin1 = D1; // IN1
 const int motorPin2 = D2; // IN2
