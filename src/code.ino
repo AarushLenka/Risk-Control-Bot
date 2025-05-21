@@ -35,12 +35,12 @@ void readSensors() {
     Serial.println("No fire detected.");
   }
 
-  /*// Gas sensor
+  // Gas sensor
   int gas_levels = analogRead(gasPin);
   Blynk.virtualWrite(V3, gas_levels);
   Serial.print("Gas levels: ");
   Serial.println(gas_levels);
-  */
+  
 
   // Buzzer control
   float gas_threshold = 100;
@@ -52,18 +52,14 @@ void readSensors() {
 
   // DHT sensor
   float temp_levels = dht.readTemperature();
-  //float hum_levels = dht.readHumidity();
- // if (isnan(temp_levels) /|| isnan(hum_levels)/) {
- //   Serial.println(temp_levels);
- // } else {
+  float hum_levels = dht.readHumidity();
   Blynk.virtualWrite(V4, temp_levels);
-    //Blynk.virtualWrite(V5, hum_levels);
+  Blynk.virtualWrite(V5, hum_levels);
   Serial.println("Temperature: ");
   Serial.println(temp_levels);
-    //Serial.print(" °C, Humidity: ");
-    //Serial.print(hum_levels);
-    //Serial.println(" %");
- // }
+  Serial.print(" °C, Humidity: ");
+  Serial.print(hum_levels);
+  Serial.println(" %");
 }
 
 void setup() {
@@ -79,7 +75,7 @@ void setup() {
   pinMode(motorPin3, OUTPUT);
   pinMode(motorPin4, OUTPUT);
   pinMode(flamePin, INPUT);
-  //pinMode(gasPin, INPUT);
+  pinMode(gasPin, INPUT);
   pinMode(buzzerPin, OUTPUT);
 
   // Initialize DHT sensor
